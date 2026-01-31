@@ -62,7 +62,7 @@ impl Default for AxisSettings {
             log_scale: false,
             name: None,
             bounds: (0.0, 1.0),
-            auto_fit: false,
+            auto_fit: true,
             axis_type: AxisType::Value(None),
         }
     }
@@ -72,6 +72,7 @@ impl AxisSettings {
     pub fn new_time_axis() -> Self {
         Self {
             name: Some("Time".to_string()),
+            auto_fit: false,
             axis_type: AxisType::Time(XDateFormat::default()),
             ..Default::default()
         }
